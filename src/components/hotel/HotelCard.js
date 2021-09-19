@@ -7,7 +7,12 @@ const HotelCard = ({ hotel }) => {
     <div className="card-box">
       <div className="card-body">
         <figure>
-          <img src={hotel.imageUrl} alt={hotel.name} className="card-image" />
+          <img
+            src={hotel.imageUrl}
+            alt={hotel.name}
+            className="card-image"
+            loading="lazy"
+          />
           <figcaption className="p-1 text-sm-start fw-lighter">
             {hotel.name}
           </figcaption>

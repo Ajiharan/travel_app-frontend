@@ -41,7 +41,9 @@ export default function hotelAdmin() {
           {/* <!-- Masthead Avatar Image--> */}
           <img class="masthead-avatar mb-5" src={avataaars} alt="..." />
           {/* <!-- Masthead Heading--> */}
-          <h1 class="masthead-heading text-uppercase mb-0">STUDENT MANAGMENT SYSTEM</h1>
+          <h1 class="masthead-heading text-uppercase mb-0">
+            STUDENT MANAGMENT SYSTEM
+          </h1>
           {/* <!-- Icon Divider--> */}
           <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
@@ -77,15 +79,15 @@ export default function hotelAdmin() {
               <p class="lead">
                 Freelancer is a free bootstrap theme created by Start Bootstrap.
                 The download includes the complete source files including HTML,
-                CSS, and JavaScript as well as optional SASS stylesheets for
+                CSS, and JavaScript as well as optional SASS stylesheets htmlFor
                 easy customization.
               </p>
             </div>
             <div class="col-lg-4 me-auto">
               <p class="lead">
-                You can create your own custom avatar for the masthead, change
-                the icon in the dividers, and add your email address to the
-                contact form to make it fully functional!
+                You can create your own custom avatar htmlFor the masthead,
+                change the icon in the dividers, and add your email address to
+                the contact form to make it fully functional!
               </p>
             </div>
           </div>
@@ -126,7 +128,7 @@ export default function hotelAdmin() {
                     placeholder="Enter your name..."
                     data-sb-validations="required"
                   />
-                  <label for="name">Full name</label>
+                  <label htmlFor="name">Full name</label>
                   <div
                     class="invalid-feedback"
                     data-sb-feedback="name:required"
@@ -143,7 +145,7 @@ export default function hotelAdmin() {
                     placeholder="name@example.com"
                     data-sb-validations="required,email"
                   />
-                  <label for="email">Email address</label>
+                  <label htmlFor="email">Email address</label>
                   <div
                     class="invalid-feedback"
                     data-sb-feedback="email:required"
@@ -163,7 +165,7 @@ export default function hotelAdmin() {
                     placeholder="(123) 456-7890"
                     data-sb-validations="required"
                   />
-                  <label for="phone">Phone number</label>
+                  <label htmlFor="phone">Phone number</label>
                   <div
                     class="invalid-feedback"
                     data-sb-feedback="phone:required"
@@ -181,7 +183,7 @@ export default function hotelAdmin() {
                     style={{ height: 10 }}
                     data-sb-validations="required"
                   ></textarea>
-                  <label for="message">Message</label>
+                  <label htmlFor="message">Message</label>
                   <div
                     class="invalid-feedback"
                     data-sb-feedback="message:required"
