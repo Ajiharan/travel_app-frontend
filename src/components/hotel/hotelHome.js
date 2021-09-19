@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-
+import Header from "../Header";
+import GuidList from "./GuidList";
+import "./hotelHome.css";
+import HotelList from "./HotelList";
 const HotelHome = () => {
-  //getting async storage data
-//   const [userToken, setToken] = useState(null);
-//   const [userEmail, setEmail] = useState(null);
-//   const [userName, setUserName] = useState(null);
-
   useEffect(() => {
     getData();
   }, []);
@@ -16,10 +14,10 @@ const HotelHome = () => {
       const usertype = localStorage.getItem("usertype");
       const token = localStorage.getItem("token");
 
-    //   setEmail(email);
-        console.log(email);
-        console.log(usertype);
-        console.log(token);
+      //   setEmail(email);
+      console.log(email);
+      console.log(usertype);
+      console.log(token);
     } catch (error) {
       console.log(error);
     }
@@ -27,13 +25,65 @@ const HotelHome = () => {
   //getting async storage data
 
   return (
-    <div className="login-form">
-      <h1 className="heading">HotelHome</h1>
-      <p className="lead">
-        <i className="fas fa-user"></i>
-        HotelHome
-      </p>
-      <br />
+    <div className="hotel-home-container">
+      <Header />
+      <div
+        id="carouselExampleControls"
+        className="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img
+              src="assets/images/h1.jpg"
+              className="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="assets/images/h2.jpg"
+              className="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="assets/images/h3.jpg"
+              className="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div className="card-container mt-4">
+        <HotelList />
+        <GuidList />
+      </div>
     </div>
   );
 };

@@ -1,0 +1,16 @@
+.hotel__list {
+  display: flex;
+  padding: 1rem;
+}
+
+.hotel__list {
+  overflow-x: hidden;
+  overflow-x: scroll;
+}
+.hotel__list::-webkit-scrollbar {
+  display: none;
+}
+
+.guid {
+  border-radius: 50%;
+}

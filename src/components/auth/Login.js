@@ -27,7 +27,12 @@ const Login = () => {
       .post("http://localhost:5000/user/login", userDetails)
       .then((result) => {
         console.log("result", result);
-        localStorage.setItem("token", result?.data);
+        localStorage.setItem("token", result?.data.token);
+        if (result?.data?.preference == 1) {
+          history.replace("/hotel");
+        } else if (result?.data.preference == 2) {
+          history.replace("/guideHome");
+        }
       })
       .catch((err) => {});
   };

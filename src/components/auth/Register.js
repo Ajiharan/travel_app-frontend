@@ -10,17 +10,19 @@ const Register = () => {
     email: "",
     password: "",
     password2: "",
+    type: "tourist",
   });
 
-  const { userName, email, password, password2 } = formData;
+  const { userName, email, password, password2, type } = formData;
 
   const onChange = (e) => {
+    console.log(e.target.name);
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const type = "hotelManagement";
+
     if (password === password2) {
       const newUser = {
         userName,
@@ -28,8 +30,7 @@ const Register = () => {
         password,
         type,
       };
-      console.log("ssssssss");
-      console.log(email);
+
       axios
         .post("http://localhost:5000/user/signup", newUser)
         .then((response) => {
@@ -54,6 +55,20 @@ const Register = () => {
 
       <br />
       <form className="form" onSubmit={(e) => onSubmit(e)}>
+        <div className="form-group d-flex justify-content-center">
+          <select
+            className="form-select select-type"
+            onChange={(e) => onChange(e)}
+            value={type}
+            name="type"
+            required
+          >
+            <option>None</option>
+            <option value="tourist">Tourist</option>
+            <option value="guide">Guide</option>
+            <option value="manager">Manager</option>
+          </select>
+        </div>
         <div className="form-group">
           <input
             type="text"
@@ -61,6 +76,7 @@ const Register = () => {
             name="userName"
             value={userName}
             onChange={(e) => onChange(e)}
+            required
           />
         </div>
         <div className="form-group">
@@ -70,6 +86,7 @@ const Register = () => {
             name="email"
             value={email}
             onChange={(e) => onChange(e)}
+            required
           />
         </div>
         <div className="form-group">
@@ -80,6 +97,7 @@ const Register = () => {
             minLength="6"
             value={password}
             onChange={(e) => onChange(e)}
+            required
           />
         </div>
         <div className="form-group">
@@ -90,6 +108,7 @@ const Register = () => {
             minLength="6"
             value={password2}
             onChange={(e) => onChange(e)}
+            required
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />

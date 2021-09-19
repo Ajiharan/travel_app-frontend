@@ -16,38 +16,19 @@ import TravelerHome from "./components/traveler/travelerHome";
 import AdminHome from "./components/admin/adminHome";
 import HotelHome from "./components/hotel/hotelHome";
 import hotelAdmin from "./components/hotel/hotelAdmin";
+import GuideHome from "./guide/GuideHome";
 
 function App() {
   const [token, setToken] = useState(false);
   const [localToken, setLocalToken] = useState(null);
 
-  const getToken = () => {
-    const tokenn = localStorage.getItem("token");
-    setLocalToken(tokenn);
-    if (localToken !== null) {
-      setToken(true);
-    }
-  };
-
-  useEffect(() => {
-    getToken();
-  });
+  useEffect(() => {});
 
   return (
     <div className="App">
       <Router>
-        <Route
-          exact
-          path="/"
-          render={() => {
-            return token ? (
-              <Redirect to="/hoteladmin" />
-            ) : (
-              <Redirect to="/" />
-            );
-          }}
-        />
         <Route path="/" exact component={Landing} />
+        <Route exzct path="/guideHome" component={GuideHome} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/travelerhome" component={TravelerHome} />
