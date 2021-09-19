@@ -1,6 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
 const Header = () => {
+  const history = useHistory();
+  const [{}, dispatch] = useStateValue();
+  const checkAuth = () => {
+    const token = localStorage.getItem("token");
+    // console.log("token", token);
+    return !token;
+    // const preference = localStorage.getItem("preference");
+  };
+
+  const signOut = () => {
+    localStorage.clear();
+    dispatch({
+      type: "RESET_USER",
+    });
+    history.replace("/");
+  };
   return (
     <nav
       className="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
@@ -27,24 +44,67 @@ const Header = () => {
                 About
               </a>
             </li>
-            <li className="nav-item mx-0 mx-lg-1">
-              <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">
-                Contact
-              </a>
-            </li>
-            <li className="nav-item mx-0 mx-lg-1">
-              <Link className="nav-link py-3 px-0 px-lg-3 rounded" to="/login">
-                Login
-              </Link>
-            </li>
-            <li className="nav-item mx-0 mx-lg-1">
-              <Link
-                className="nav-link py-3 px-0 px-lg-3 rounded"
-                to="/register"
-              >
-                SignUp
-              </Link>
-            </li>
+            {!checkAuth() && (
+              <li className="nav-item mx-0 mx-lg-1">
+                <Link className="nav-link py-3 px-0 px-lg-3 rounded" to="/">
+                  Home
+                </Link>
+              </li>
+            )}
+            {!checkAuth() && (
+              <li className="nav-item mx-0 mx-lg-1">
+                <Link
+                  className="nav-link py-3 px-0 px-lg-3 rounded"
+                  to="/login"
+                >
+                  Feedback
+                </Link>
+              </li>
+            )}
+            {checkAuth() && (
+              <li className="nav-item mx-0 mx-lg-1">
+                <Link
+                  className="nav-link py-3 px-0 px-lg-3 rounded"
+                  to="/login"
+                >
+                  Login
+                </Link>
+              </li>
+            )}
+
+            {checkAuth() && (
+              <li className="nav-item mx-0 mx-lg-1">
+                <Link
+                  className="nav-link py-3 px-0 px-lg-3 rounded"
+                  to="/register"
+                >
+                  SignUp
+                </Link>
+              </li>
+            )}
+
+            {!checkAuth() && (
+              <li className="nav-item mx-0 mx-lg-1">
+                <Link
+                  className="nav-link py-3 px-0 px-lg-3 rounded"
+                  to="/profile"
+                >
+                  Profile
+                </Link>
+              </li>
+            )}
+
+            {!checkAuth() && (
+              <li className="nav-item mx-0 mx-lg-1">
+                <Link
+                  className="nav-link py-3 px-0 px-lg-3 rounded"
+                  to="/"
+                  onClick={signOut}
+                >
+                  SignOut
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

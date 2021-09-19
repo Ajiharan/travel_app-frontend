@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { useStateValue } from "../../StateProvider";
 
 const Login = () => {
   let history = useHistory();
@@ -9,7 +10,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-
+  const [{ user }, dispatch] = useStateValue();
   const { email, password } = formData;
 
   const onChange = (e) => {
@@ -26,12 +27,22 @@ const Login = () => {
     axios
       .post("http://localhost:5000/user/login", userDetails)
       .then((result) => {
-        console.log("result", result);
+        // console.log("result", result);
         localStorage.setItem("token", result?.data.token);
+        localStorage.setItem("userLevel", result?.data.preference);
+        localStorage.setItem("uid", result?.data?.id);
+        dispatch({
+          type: "LOGIN_USER",
+          user: {
+            token: result?.data.token,
+            userLevel: result?.data.preference,
+            id: result?.data?.id,
+          },
+        });
         if (result?.data?.preference == 1) {
-          history.replace("/hotel");
+          history.replace("/");
         } else if (result?.data.preference == 2) {
-          history.replace("/guideHome");
+          history.replace("/");
         }
       })
       .catch((err) => {});

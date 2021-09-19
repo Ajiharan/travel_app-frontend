@@ -8,55 +8,55 @@ export default function Landing() {
   return (
     <div>
       <Header />/{/* <!-- Masthead--> */}
-      <header class="masthead bg-primary text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
+      <header className="masthead bg-primary text-white text-center">
+        <div className="container d-flex align-items-center flex-column">
           {/* <!-- Masthead Avatar Image--> */}
-          <img class="masthead-avatar mb-5" src={avataaars} alt="..." />
+          <img className="masthead-avatar mb-5" src={avataaars} alt="..." />
           {/* <!-- Masthead Heading--> */}
-          <h1 class="masthead-heading text-uppercase mb-0">
+          <h1 className="masthead-heading text-uppercase mb-0">
             STUDENT MANAGMENT SYSTEM
           </h1>
           {/* <!-- Icon Divider--> */}
-          <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-              <i class="fas fa-star"></i>
+          <div className="divider-custom divider-light">
+            <div className="divider-custom-line"></div>
+            <div className="divider-custom-icon">
+              <i className="fas fa-star"></i>
             </div>
-            <div class="divider-custom-line"></div>
+            <div className="divider-custom-line"></div>
           </div>
           {/* <!-- Masthead Subheading--> */}
-          {/* <p class="masthead-subheading font-weight-light mb-0">
+          {/* <p className="masthead-subheading font-weight-light mb-0">
             Graphic Artist - Web Designer - Illustrator
           </p> */}
         </div>
       </header>
       {/* <!-- About Section--> */}
-      <section class="page-section bg-primary text-white mb-0" id="about">
-        <div class="container">
+      <section className="page-section bg-primary text-white mb-0" id="about">
+        <div className="container">
           {/* <!-- About Section Heading--> */}
-          <h2 class="page-section-heading text-center text-uppercase text-white">
+          <h2 className="page-section-heading text-center text-uppercase text-white">
             About
           </h2>
           {/* <!-- Icon Divider--> */}
-          <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-              <i class="fas fa-star"></i>
+          <div className="divider-custom divider-light">
+            <div className="divider-custom-line"></div>
+            <div className="divider-custom-icon">
+              <i className="fas fa-star"></i>
             </div>
-            <div class="divider-custom-line"></div>
+            <div className="divider-custom-line"></div>
           </div>
           {/* <!-- About Section Content--> */}
-          <div class="row">
-            <div class="col-lg-4 ms-auto">
-              <p class="lead">
+          <div className="row">
+            <div className="col-lg-4 ms-auto">
+              <p className="lead">
                 Freelancer is a free bootstrap theme created by Start Bootstrap.
                 The download includes the complete source files including HTML,
                 CSS, and JavaScript as well as optional SASS stylesheets for
                 easy customization.
               </p>
             </div>
-            <div class="col-lg-4 me-auto">
-              <p class="lead">
+            <div className="col-lg-4 me-auto">
+              <p className="lead">
                 You can create your own custom avatar for the masthead, change
                 the icon in the dividers, and add your email address to the
                 contact form to make it fully functional!
@@ -66,23 +66,23 @@ export default function Landing() {
         </div>
       </section>
       {/* <!-- Contact Section--> */}
-      <section class="page-section" id="contact">
-        <div class="container">
+      <section className="page-section" id="contact">
+        <div className="container">
           {/* <!-- Contact Section Heading--> */}
-          <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+          <h2 className="page-section-heading text-center text-uppercase text-secondary mb-0">
             Contact Me
           </h2>
           {/* <!-- Icon Divider--> */}
-          <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-              <i class="fas fa-star"></i>
+          <div className="divider-custom">
+            <div className="divider-custom-line"></div>
+            <div className="divider-custom-icon">
+              <i className="fas fa-star"></i>
             </div>
-            <div class="divider-custom-line"></div>
+            <div className="divider-custom-line"></div>
           </div>
           {/* <!-- Contact Section Form--> */}
-          <div class="row justify-content-center">
-            <div class="col-lg-8 col-xl-7">
+          <div className="row justify-content-center">
+            <div className="col-lg-8 col-xl-7">
               {/* <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->
                         <!-- * * * * * * * * * * * * * * *-->
@@ -92,72 +92,75 @@ export default function Landing() {
                         <!-- to get an API token!--> */}
               <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                 {/* <!-- Name input--> */}
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
-                    class="form-control"
+                    className="form-control"
                     id="name"
                     type="text"
                     placeholder="Enter your name..."
                     data-sb-validations="required"
                   />
-                  <label for="name">Full name</label>
+                  <label htmlFor="name">Full name</label>
                   <div
-                    class="invalid-feedback"
+                    className="invalid-feedback"
                     data-sb-feedback="name:required"
                   >
                     A name is required.
                   </div>
                 </div>
                 {/* <!-- Email address input--> */}
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
-                    class="form-control"
+                    className="form-control"
                     id="email"
                     type="email"
                     placeholder="name@example.com"
                     data-sb-validations="required,email"
                   />
-                  <label for="email">Email address</label>
+                  <label htmlFor="email">Email address</label>
                   <div
-                    class="invalid-feedback"
+                    className="invalid-feedback"
                     data-sb-feedback="email:required"
                   >
                     An email is required.
                   </div>
-                  <div class="invalid-feedback" data-sb-feedback="email:email">
+                  <div
+                    className="invalid-feedback"
+                    data-sb-feedback="email:email"
+                  >
                     Email is not valid.
                   </div>
                 </div>
                 {/* <!-- Phone number input--> */}
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
-                    class="form-control"
+                    className="form-control"
                     id="phone"
                     type="tel"
                     placeholder="(123) 456-7890"
                     data-sb-validations="required"
                   />
-                  <label for="phone">Phone number</label>
+                  <label htmlFor="phone">Phone number</label>
                   <div
-                    class="invalid-feedback"
+                    className="invalid-feedback"
                     data-sb-feedback="phone:required"
                   >
                     A phone number is required.
                   </div>
                 </div>
                 {/* <!-- Message input--> */}
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <textarea
-                    class="form-control"
+                    className="form-control"
                     id="message"
                     type="text"
                     placeholder="Enter your message here..."
                     style={{ height: 10 }}
                     data-sb-validations="required"
                   ></textarea>
-                  <label for="message">Message</label>
+                  <label htmlFor="message">Message</label>
                   <div
-                    class="invalid-feedback"
+                    className="invalid-feedback"
                     data-sb-feedback="message:required"
                   >
                     A message is required.
@@ -167,9 +170,9 @@ export default function Landing() {
                 {/* <!----> */}
                 {/* <!-- This is what your users will see when the form-->
                             <!-- has successfully submitted--> */}
-                <div class="d-none" id="submitSuccessMessage">
-                  <div class="text-center mb-3">
-                    <div class="fw-bolder">Form submission successful!</div>
+                <div className="d-none" id="submitSuccessMessage">
+                  <div className="text-center mb-3">
+                    <div className="fw-bolder">Form submission successful!</div>
                     To activate this form, sign up at
                     <br />
                     <a href="https://startbootstrap.com/solution/contact-forms">
@@ -181,14 +184,14 @@ export default function Landing() {
                             <!---->
                             <!-- This is what your users will see when there is--> */}
                 {/* <!-- an error submitting the form--> */}
-                <div class="d-none" id="submitErrorMessage">
-                  <div class="text-center text-danger mb-3">
+                <div className="d-none" id="submitErrorMessage">
+                  <div className="text-center text-danger mb-3">
                     Error sending message!
                   </div>
                 </div>
                 {/* <!-- Submit Button--> */}
                 <button
-                  class="btn btn-primary btn-xl disabled"
+                  className="btn btn-primary btn-xl disabled"
                   id="submitButton"
                   type="submit"
                 >
@@ -200,38 +203,38 @@ export default function Landing() {
         </div>
       </section>
       {/* <!-- Footer--> */}
-      <footer class="footer text-center">
-        <div class="container">
-          <div class="row">
+      <footer className="footer text-center">
+        <div className="container">
+          <div className="row">
             {/* <!-- Footer Location--> */}
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <h4 class="text-uppercase mb-4">Location</h4>
-              <p class="lead mb-0">
+            <div className="col-lg-4 mb-5 mb-lg-0">
+              <h4 className="text-uppercase mb-4">Location</h4>
+              <p className="lead mb-0">
                 2215 John Daniel Drive
                 <br />
                 Clark, MO 65243
               </p>
             </div>
             {/* <!-- Footer Social Icons--> */}
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <h4 class="text-uppercase mb-4">Around the Web</h4>
-              <a class="btn btn-outline-light btn-social mx-1" href="#!">
-                <i class="fab fa-fw fa-facebook-f"></i>
+            <div className="col-lg-4 mb-5 mb-lg-0">
+              <h4 className="text-uppercase mb-4">Around the Web</h4>
+              <a className="btn btn-outline-light btn-social mx-1" href="#!">
+                <i className="fab fa-fw fa-facebook-f"></i>
               </a>
-              <a class="btn btn-outline-light btn-social mx-1" href="#!">
-                <i class="fab fa-fw fa-twitter"></i>
+              <a className="btn btn-outline-light btn-social mx-1" href="#!">
+                <i className="fab fa-fw fa-twitter"></i>
               </a>
-              <a class="btn btn-outline-light btn-social mx-1" href="#!">
-                <i class="fab fa-fw fa-linkedin-in"></i>
+              <a className="btn btn-outline-light btn-social mx-1" href="#!">
+                <i className="fab fa-fw fa-linkedin-in"></i>
               </a>
-              <a class="btn btn-outline-light btn-social mx-1" href="#!">
-                <i class="fab fa-fw fa-dribbble"></i>
+              <a className="btn btn-outline-light btn-social mx-1" href="#!">
+                <i className="fab fa-fw fa-dribbble"></i>
               </a>
             </div>
             {/* <!-- Footer About Text--> */}
-            <div class="col-lg-4">
-              <h4 class="text-uppercase mb-4">About Freelancer</h4>
-              <p class="lead mb-0">
+            <div className="col-lg-4">
+              <h4 className="text-uppercase mb-4">About Freelancer</h4>
+              <p className="lead mb-0">
                 Freelance is a free to use, MIT licensed Bootstrap theme created
                 by
                 <a href="http://startbootstrap.com">Start Bootstrap</a>.
@@ -241,8 +244,8 @@ export default function Landing() {
         </div>
       </footer>
       {/* <!-- Copyright Section--> */}
-      <div class="copyright py-4 text-center text-white">
-        <div class="container">
+      <div className="copyright py-4 text-center text-white">
+        <div className="container">
           <small>Copyright &copy; Your Website 2021</small>
         </div>
       </div>
