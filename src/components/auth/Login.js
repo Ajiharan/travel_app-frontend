@@ -39,11 +39,7 @@ const Login = () => {
             id: result?.data?.id,
           },
         });
-        if (result?.data?.preference == 1) {
-          history.replace("/");
-        } else if (result?.data.preference == 2) {
-          history.replace("/");
-        }
+        history.replace("/");
       })
       .catch((err) => {});
   };

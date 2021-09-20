@@ -1,6 +1,11 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { RatingView } from "react-simple-star-rating";
 const GuidCard = ({ guide }) => {
+  const history = useHistory();
+  const navigateUrl = () => {
+    history.push("/guideBook", { guide });
+  };
   return (
     <div className="card-box">
       <div className="card-body">
@@ -20,7 +25,10 @@ const GuidCard = ({ guide }) => {
             <p>{` ${guide.experience} years experience`}</p>
           </figcaption>
           <figcaption>
-            <button className="btn btn-danger btn-sm btn-block m-0 btn__bookHotel">
+            <button
+              className="btn btn-danger btn-sm btn-block m-0 btn__bookHotel"
+              onClick={navigateUrl}
+            >
               Book Guide
             </button>
           </figcaption>

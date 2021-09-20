@@ -2,6 +2,7 @@ export const initialState = {
   user: null,
   userInfo: null,
   guideDetails: [],
+  userDetails: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -17,6 +18,7 @@ export const reducer = (state = initialState, action) => {
         user: null,
         userInfo: null,
         guideDetails: [],
+        userDetails: [],
       };
     case "GET_USER_INFO":
       return {
@@ -27,6 +29,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         guideDetails: action.guideDetails,
+      };
+    case "GET_USER_DETAILS":
+      return {
+        ...state,
+        userDetails: action.userDetails,
       };
 
     default:
