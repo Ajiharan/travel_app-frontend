@@ -5,6 +5,7 @@ const ManagerBookingTable = () => {
   const [{ bookingDetails }] = useStateValue();
   return (
     <div className="booking_table table-striped">
+      <h3 className="text-info">Hotel Booking Details</h3>
       <table className="table">
         <thead>
           <tr>

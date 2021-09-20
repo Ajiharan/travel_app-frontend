@@ -5,6 +5,7 @@ const AdminUsersList = () => {
   const [{ userDetails }] = useStateValue();
   return (
     <div className="admin__userList">
+      <h3 className="text-info">User Details</h3>
       <table className="table table-striped ">
         <thead>
           <tr>
