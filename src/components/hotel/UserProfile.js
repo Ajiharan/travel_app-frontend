@@ -59,11 +59,6 @@ const UserProfile = () => {
           type: "GET_USER_INFO",
           userInfo: res.data,
         });
-
-        dispatch({
-          type: "GET_USER_INFO",
-          userInfo: res.data,
-        });
       })
       .catch((err) => {
         console.log("err", err);

@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./hotelCard.css";
 import { RatingView } from "react-simple-star-rating";
+import { useHistory } from "react-router-dom";
 const HotelCard = ({ hotel }) => {
+  const history = useHistory();
+  const navigateUrl = () => {
+    history.push("/hotelBook", { hotel });
+  };
   return (
     <div className="card-box">
       <div className="card-body">
@@ -23,7 +28,10 @@ const HotelCard = ({ hotel }) => {
             <p>{`Rs ${hotel.price}`}</p>
           </figcaption>
           <figcaption>
-            <button className="btn btn-danger btn-sm btn-block m-0 btn__bookHotel">
+            <button
+              className="btn btn-danger btn-sm btn-block m-0 btn__bookHotel"
+              onClick={navigateUrl}
+            >
               Book Hotel
             </button>
           </figcaption>

@@ -1,0 +1,50 @@
+.hotel__book__container {
+  margin-top: 8rem;
+  display: flex;
+  padding: 1rem;
+}
+.hotel__boook__left {
+}
+.container-box {
+  background-color: lightgray;
+  display: flex;
+  height: 37rem;
+  width: 25rem;
+  flex-direction: column;
+}
+.container-box img {
+  width: 25rem;
+  height: fit-content;
+}
+.container-box p {
+  font-size: 0.9rem;
+}
+.hotel__price {
+  font-size: 1.2rem !important;
+}
+.hotel__boook__right {
+  margin-left: 1rem;
+  padding: 1rem;
+  flex: 1 1;
+  height: 40rem;
+  background-color: rgb(245, 246, 247);
+}
+
+.hotel__boook__right .book_form_control {
+  padding: 0;
+  font-size: 1rem !important;
+  height: 3.7rem;
+}
+.hotel__boook__right select {
+  padding: 0;
+  font-size: 0.8rem !important;
+  height: 3.5rem;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid lightgray;
+}
+.hotel__boook__right label {
+  padding: 0;
+  font-size: 0.9rem;
+  top: 12px;
+}

@@ -3,9 +3,29 @@ import Header from "../Header";
 import GuidList from "./GuidList";
 import "./hotelHome.css";
 import HotelList from "./HotelList";
+import axios from "axios";
+import { useStateValue } from "../../StateProvider";
 const HotelHome = () => {
+  const [{ userInfo, user }, dispatch] = useStateValue();
   useEffect(() => {
     getData();
+    if (user?.id) {
+      axios
+        .get(`http://localhost:5000/user/${user.id}`, {
+          headers: { tour: user?.token },
+        })
+        .then((res) => {
+          console.log(res.data);
+
+          dispatch({
+            type: "GET_USER_INFO",
+            userInfo: res.data,
+          });
+        })
+        .catch((err) => {
+          console.log("err", err);
+        });
+    }
   }, []);
 
   const getData = async () => {

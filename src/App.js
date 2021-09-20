@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Landing from "./components/auth/landing";
@@ -13,6 +14,7 @@ import GuideHome from "./components/guide/GuideHome";
 import Switch from "react-bootstrap/esm/Switch";
 import { useStateValue } from "./StateProvider";
 import UserProfile from "./components/hotel/UserProfile";
+import HotelBook from "./components/hotel/HotelBook";
 function App() {
   const [{ user }, dispatch] = useStateValue();
   useEffect(() => {
@@ -38,6 +40,7 @@ function App() {
         <React.Fragment>
           <Route exact path="/" component={HotelHome} />{" "}
           <Route exact path="/profile" component={UserProfile} />
+          <Route exact path="/hotelBook" component={HotelBook} />
         </React.Fragment>
       );
     } else if (user?.userLevel == 2) {
@@ -48,6 +51,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer autoClose={2000} />
       <Router>
         <Switch>
           {userHome()}
