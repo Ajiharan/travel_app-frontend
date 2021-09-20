@@ -1,6 +1,7 @@
 export const initialState = {
   user: null,
   userInfo: null,
+  guideDetails: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -20,6 +21,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         userInfo: action.userInfo,
+      };
+    case "GET_GUIDE_DETAILS":
+      return {
+        ...state,
+        guideDetails: action.guideDetails,
       };
 
     default:

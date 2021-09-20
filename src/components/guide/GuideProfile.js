@@ -83,7 +83,10 @@ const GuideProfile = () => {
         <div className="profile__container__left">
           <div className="profile__image">
             <img
-              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnN8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
+              src={
+                userInfo?.profilePic ||
+                "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnN8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
+              }
               alt="user"
             />
             <p>{userInfo?.userName}</p>

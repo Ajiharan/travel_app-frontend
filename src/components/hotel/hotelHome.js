@@ -25,7 +25,26 @@ const HotelHome = () => {
           console.log("err", err);
         });
     }
+    getTouristList();
   }, []);
+
+  const getTouristList = () => {
+    axios
+      .get(`http://localhost:5000/user/tourist/2`, {
+        headers: { tour: user?.token },
+      })
+      .then((res) => {
+        console.log(res.data);
+
+        dispatch({
+          type: "GET_USER_INFO",
+          userInfo: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  };
 
   //getting async storage data
 
