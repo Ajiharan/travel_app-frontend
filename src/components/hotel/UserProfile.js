@@ -36,8 +36,6 @@ const UserProfile = () => {
           headers: { tour: user?.token },
         })
         .then((res) => {
-          console.log("res", res.data);
-
           dispatch({
             type: "GET_USER_INFO",
             userInfo: res.data,
@@ -50,7 +48,7 @@ const UserProfile = () => {
   }, [user]);
   const submitForm = (e) => {
     e.preventDefault();
-    console.log("formData", formData);
+
     axios
       .put(`http://localhost:5000/user/${user.id}`, formData, {
         headers: { tour: user?.token },

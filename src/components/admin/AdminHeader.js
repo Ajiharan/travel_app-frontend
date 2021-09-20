@@ -6,7 +6,7 @@ const AdminHeader = () => {
   const [{}, dispatch] = useStateValue();
   const checkAuth = () => {
     const token = localStorage.getItem("token");
-    // console.log("token", token);
+
     return !token;
     // const preference = localStorage.getItem("preference");
   };

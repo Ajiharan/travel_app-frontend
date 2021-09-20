@@ -27,7 +27,6 @@ const Login = () => {
     axios
       .post("http://localhost:5000/user/login", userDetails)
       .then((result) => {
-        // console.log("result", result);
         localStorage.setItem("token", result?.data.token);
         localStorage.setItem("userLevel", result?.data.preference);
         localStorage.setItem("uid", result?.data?.id);

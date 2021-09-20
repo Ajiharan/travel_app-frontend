@@ -20,9 +20,6 @@ import GuideBook from "./components/hotel/GuideBook";
 import ManagerHome from "./components/manager/ManagerHome";
 function App() {
   const [{ user }, dispatch] = useStateValue();
-  useEffect(() => {
-    console.log("user", user);
-  }, [user]);
 
   useEffect(() => {
     if (localStorage.getItem("token")) {

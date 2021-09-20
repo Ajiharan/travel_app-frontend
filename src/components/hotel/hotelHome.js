@@ -14,8 +14,6 @@ const HotelHome = () => {
           headers: { tour: user?.token },
         })
         .then((res) => {
-          console.log(res.data);
-
           dispatch({
             type: "GET_USER_INFO",
             userInfo: res.data,
@@ -34,7 +32,6 @@ const HotelHome = () => {
         headers: { tour: user?.token },
       })
       .then((res) => {
-        console.log(res.data);
         dispatch({
           type: "GET_GUIDE_DETAILS",
           guideDetails: res.data,

@@ -39,8 +39,6 @@ const GuideProfile = () => {
           headers: { tour: user?.token },
         })
         .then((res) => {
-          console.log(res.data);
-
           dispatch({
             type: "GET_USER_INFO",
             userInfo: res.data,

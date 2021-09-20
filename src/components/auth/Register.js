@@ -16,7 +16,6 @@ const Register = () => {
   const { userName, email, password, password2, type } = formData;
 
   const onChange = (e) => {
-    console.log(e.target.name);
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
