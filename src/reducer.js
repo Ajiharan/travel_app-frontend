@@ -16,6 +16,7 @@ export const reducer = (state = initialState, action) => {
         ...state,
         user: null,
         userInfo: null,
+        guideDetails: [],
       };
     case "GET_USER_INFO":
       return {

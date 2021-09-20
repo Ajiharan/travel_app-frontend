@@ -6,7 +6,7 @@ import HotelList from "./HotelList";
 import axios from "axios";
 import { useStateValue } from "../../StateProvider";
 const HotelHome = () => {
-  const [{ userInfo, user }, dispatch] = useStateValue();
+  const [{ userInfo, user, guideDetails }, dispatch] = useStateValue();
   useEffect(() => {
     if (user?.id) {
       axios
@@ -35,10 +35,9 @@ const HotelHome = () => {
       })
       .then((res) => {
         console.log(res.data);
-
         dispatch({
-          type: "GET_USER_INFO",
-          userInfo: res.data,
+          type: "GET_GUIDE_DETAILS",
+          guideDetails: res.data,
         });
       })
       .catch((err) => {

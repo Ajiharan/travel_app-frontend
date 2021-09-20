@@ -6,7 +6,7 @@ const GuidCard = ({ guide }) => {
       <div className="card-body">
         <figure>
           <img
-            src={guide.imageUrl}
+            src={guide.profilePic}
             alt={guide.name}
             className="card-image guid"
           />
@@ -14,7 +14,7 @@ const GuidCard = ({ guide }) => {
             {guide.name}
           </figcaption>
           <figcaption>
-            <RatingView ratingValue={guide.stars} />
+            <RatingView ratingValue={guide?.rating} />
           </figcaption>
           <figcaption className="p-1">
             <p>{` ${guide.experience} years experience`}</p>
