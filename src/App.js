@@ -17,6 +17,7 @@ import UserProfile from "./components/hotel/UserProfile";
 import HotelBook from "./components/hotel/HotelBook";
 import GuideProfile from "./components/guide/GuideProfile";
 import GuideBook from "./components/hotel/GuideBook";
+import ManagerHome from "./components/manager/ManagerHome";
 function App() {
   const [{ user }, dispatch] = useStateValue();
   useEffect(() => {
@@ -51,6 +52,12 @@ function App() {
         <React.Fragment>
           <Route exact path="/" component={GuideHome} />
           <Route exact path="/profile" component={GuideProfile} />
+        </React.Fragment>
+      );
+    } else if (user?.userLevel == 3) {
+      return (
+        <React.Fragment>
+          <Route exact path="/" component={ManagerHome} />
         </React.Fragment>
       );
     } else if (user?.userLevel == 4) {

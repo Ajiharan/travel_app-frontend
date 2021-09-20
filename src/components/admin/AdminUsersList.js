@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AdminUserList.css";
 import { useStateValue } from "../../StateProvider";
 const AdminUsersList = () => {
   const [{ userDetails }] = useStateValue();
   return (
     <div className="admin__userList">
-      <table className="table">
+      <table className="table table-striped ">
         <thead>
           <tr>
             <th scope="col">picture</th>

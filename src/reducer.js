@@ -3,6 +3,7 @@ export const initialState = {
   userInfo: null,
   guideDetails: [],
   userDetails: [],
+  bookingDetails: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -19,6 +20,7 @@ export const reducer = (state = initialState, action) => {
         userInfo: null,
         guideDetails: [],
         userDetails: [],
+        bookingDetails: [],
       };
     case "GET_USER_INFO":
       return {
@@ -35,7 +37,11 @@ export const reducer = (state = initialState, action) => {
         ...state,
         userDetails: action.userDetails,
       };
-
+    case "GET_BOOKING_DETAILS":
+      return {
+        ...state,
+        bookingDetails: action.bookingDetails,
+      };
     default:
       return { ...state };
   }
