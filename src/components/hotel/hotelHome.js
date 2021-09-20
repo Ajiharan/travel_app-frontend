@@ -8,7 +8,6 @@ import { useStateValue } from "../../StateProvider";
 const HotelHome = () => {
   const [{ userInfo, user }, dispatch] = useStateValue();
   useEffect(() => {
-    getData();
     if (user?.id) {
       axios
         .get(`http://localhost:5000/user/${user.id}`, {
@@ -28,20 +27,6 @@ const HotelHome = () => {
     }
   }, []);
 
-  const getData = async () => {
-    try {
-      const email = localStorage.getItem("userEmail");
-      const usertype = localStorage.getItem("usertype");
-      const token = localStorage.getItem("token");
-
-      //   setEmail(email);
-      console.log(email);
-      console.log(usertype);
-      console.log(token);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   //getting async storage data
 
   return (
